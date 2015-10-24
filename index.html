@@ -2,33 +2,34 @@
 <!-- website module -->
 <html ng-app="website">
 <head>
-    <title>Steve Jones</title>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/website.css">
+  <title>Steve Jones</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/website.css">
 </head>
 <body ng-controller="MainCtrl">
-<!-- top -->
-<header id="header">
+  <!-- top -->
+  <header id="header">
     <h1 id="logo"><a href="#/home"></a></h1>
 
     <div id="menu">
-        <a href="#/home" class="btn">Home</a>
-        <a href="#/about" class="btn">About</a>
-        <a href="#/experiments" class="btn">Experiments</a>
+      <a href="#/home" class="btn">Home</a>
+      <a href="#/about" class="btn">About</a>
+      <a href="#/experiments" class="btn">Experiments</a>
     </div>
     <div class="color"></div>
     <div class="clear"></div>
-</header>
-<!-- //top -->
-<div class="shadow"></div>
+  </header>
+  <!-- //top -->
+  <div class="shadow"></div>
 
-<div id="container">
+  <div id="container">
+    <!-- Routes - used for deep linking in sigle page app -->
     <div ng-view></div>
-</div>
+  </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
 
-<script type="text/javascript" src="js/website.js"></script>
+  <script type="text/javascript" src="js/website.js"></script>
 </body>
 </html>
