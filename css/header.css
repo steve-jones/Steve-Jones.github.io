@@ -31,6 +31,55 @@ h1 {
   font-family: Montserrat, sans-serif !important;
 }
 
+.picture {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: calc(5vw + 5vh + 2vmin);
+  width: calc(5vw + 5vh + 2vmin);
+  border-radius: 500px;
+  background: url(/images/SteveJones.jpg) center center no-repeat;
+  background-size: cover;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .23), 0 3px 12px rgba(0, 0, 0, .16);
+  transition: box-shadow .3s ease-in-out;
+  animation-name: bounceIn;
+  animation-iteration-count: 1s;
+  animation-duration: .9s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+.picture:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .23), 0 10px 40px rgba(0, 0, 0, .19)
+}
+.picture.hasPulse:after, .centered-info .picture.hasPulse:before {
+  content: '';
+  position: absolute;
+  border: 0 solid rgba(250, 250, 250, .1);
+  border-radius: 100%;
+  animation: pulse 3s ease-in-out 0s infinite
+}
+.picture.hasPulse:before {
+  border-color: rgba(250, 250, 250, .1);
+  border-width: 4px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0
+}
+.picture.hasPulse:after {
+  border-color: rgba(212, 212, 212, .1);
+  border-width: 2px;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px
+}
+
 /*!
  * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
