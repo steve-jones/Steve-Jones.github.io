@@ -36,6 +36,7 @@ h1 {
   position: relative;
   display: block;
   margin: 0 auto;
+  margin-bottom: 4.5rem;
   height: calc(5vw + 5vh + 2vmin);
   width: calc(5vw + 5vh + 2vmin);
   border-radius: 500px;
