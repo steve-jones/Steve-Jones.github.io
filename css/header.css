@@ -154,7 +154,7 @@ aside {
 .navbar-default {
   border-color: rgba(150, 131, 124, 0);
   font-family: Montserrat, sans-serif;
-  background-color: #000;
+  background-color: rgba(19, 23, 26, 0.8);
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
@@ -203,7 +203,7 @@ aside {
   }
   .navbar-default.affix {
     border-color: rgba(150, 131, 124, 0);
-    background-color: #000;
+    background-color: rgba(19, 23, 26, 0.8);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
     font-size: 14px;
