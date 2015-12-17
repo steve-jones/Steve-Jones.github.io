@@ -178,7 +178,7 @@ aside {
   color: #13171a;
 }
 .navbar-default .nav > li.active>a, .navbar-default .nav>li.active>a:focus {
-  color: #13171a!important;
+  color: #ffffff !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active>a:hover, .navbar-default .nav>li.active>a:focus:hover {
@@ -216,7 +216,7 @@ aside {
     color: #FAFAFA;
   }
   .navbar-default.affix .nav > li>a:hover, .navbar-default.affix .nav>li>a:focus:hover {
-    color: #13171a;
+    color: #ffffff;
   }
 }
 header {
@@ -356,8 +356,11 @@ header .header-content .header-content-inner p {
 }
 .button {
   flex: 1 1 auto;
-  margin: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 5px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: 10px;
+  margin-left: 10px;
   text-align: center;
   text-transform: uppercase;
   position: relative;
