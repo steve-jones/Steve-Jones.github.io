@@ -81,6 +81,16 @@ h1 {
   bottom: -5px
 }
 
+.bio {
+  font-weight: 400;
+  animation-name: fadeIn;
+    animation-iteration-count: 1s;
+    animation-duration: .3s;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
 /*!
  * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -265,8 +275,9 @@ header .header-content .header-content-inner p {
   header .header-content .header-content-inner p {
     margin-right: auto;
     margin-left: auto;
-    max-width: 80%;
+        max-width: 50%;
     font-size: 18px;
+    font-weight: 400;
   }
 }
 .section-heading {
