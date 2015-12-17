@@ -30,7 +30,6 @@ h1 {
   font-weight: 700;
   font-family: Montserrat, sans-serif !important;
 }
-
 .picture {
   cursor: pointer;
   position: relative;
@@ -80,15 +79,14 @@ h1 {
   right: -5px;
   bottom: -5px
 }
-
 .bio {
   font-weight: 400;
   animation-name: fadeIn;
-    animation-iteration-count: 1s;
-    animation-duration: .3s;
-    animation-delay: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
+  animation-iteration-count: 1s;
+  animation-duration: .3s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
 /*!
@@ -123,6 +121,7 @@ a {
   color: #fff
 }
 a:hover, a:focus {
+    text-decoration: none;
   color: #FAFAFA;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -153,7 +152,7 @@ aside {
   padding: 0;
 }
 .navbar-default {
-  border-color: rgba(150, 131, 124, .05);
+  border-color: rgba(150, 131, 124, 0);
   font-family: Montserrat, sans-serif;
   background-color: #000;
   -webkit-transition: all .35s;
@@ -187,7 +186,7 @@ aside {
 }
 @media(min-width:768px) {
   .navbar-default {
-    border-color: rgba(255, 255, 255, .3);
+    border-color: rgba(255, 255, 255, 0);
     background-color: transparent;
   }
   .navbar-default .navbar-header .navbar-brand {
@@ -203,7 +202,7 @@ aside {
     color: #fff;
   }
   .navbar-default.affix {
-    border-color: rgba(150, 131, 124, .05);
+    border-color: rgba(150, 131, 124, 0);
     background-color: #000;
   }
   .navbar-default.affix .navbar-header .navbar-brand {
@@ -275,9 +274,9 @@ header .header-content .header-content-inner p {
   header .header-content .header-content-inner p {
     margin-right: auto;
     margin-left: auto;
-        max-width: 50%;
-    font-size: 18px;
-    font-weight: 400;
+    max-width: 50%;
+    font-size: 1.3em;
+    font-weight: 100;
   }
 }
 .section-heading {
@@ -354,6 +353,57 @@ header .header-content .header-content-inner p {
 .no-gutter > [class*=col-] {
   padding-right: 0;
   padding-left: 0;
+}
+.button {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+.button:after {
+  position: absolute;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background: #f7f7f7;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button:hover:after {
+  width: 100%;
+  left: 0;
+}
+.button-txt {
+  flex: 1 1 auto;
+  padding-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+.button-txt:after {
+  position: absolute;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background: #f7f7f7;
+}
+.button-txt:hover {
+  cursor: pointer;
+}
+.button-txt:hover:after {
+  width: 100%;
+  left: 0;
 }
 .btn-default {
   border-color: #fff;
