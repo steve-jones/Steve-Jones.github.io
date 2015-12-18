@@ -16,4 +16,4 @@ This repository includes all the code for my personal website and I welcome you 
 5. [How to Design & Develop a Personal Website](https://medium.com/@steve_jones/how-to-design-develop-a-personal-website-4b44418d537a#.vpj6ztc23)
 6. [What to Include on a Personal Website](https://medium.com/@steve_jones/6-what-to-include-on-a-personal-website-1602351b42cf#.ss7qmv4e6)
 7. [Software Engineering Resume - Best Practices](https://medium.com/@steve_jones/7-software-engineer-resume-best-practices-7598636bdf3f#.wohxj35hz)
-8. [Resources for Creating a Personal Website](https://medium.com/@steve_jones/8-resources-to-help-land-a-software-engineering-position-9291322f8d21#.pqo9ggl24)
+8. [Resources to Help Land a Software Engineering Position](https://medium.com/@steve_jones/8-resources-to-help-land-a-software-engineering-position-9291322f8d21#.pqo9ggl24)
