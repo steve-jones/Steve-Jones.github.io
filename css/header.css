@@ -1,6 +1,6 @@
 /*
 *COLORS USED:
-*Background, Link Color: #FAFAFA, rgba(179,156,143,.9)
+*Background, Link Color: #FAFAFA, rgba(19, 23, 26, 0.8);
 *Light Background, Navbar Font: #FAFAFA
 *Dark Background: #000, rgba(150,131,124,.05)
 *Link Focus: #fefde2
@@ -79,6 +79,19 @@ h1 {
   right: -5px;
   bottom: -5px
 }
+.name{
+  animation-name: fadeInDown;
+  animation-iteration-count: 1s;
+  animation-duration: 1s
+}
+.divider{
+  animation-delay: .1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-name: fadeInDown;
+  animation-iteration-count: 1s;
+  animation-duration: 1s
+}
 .bio {
   font-weight: 400;
   animation-name: fadeIn;
@@ -116,6 +129,12 @@ a {
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
+}
+.contact-links {
+  color: #333;
+}
+.contact-links:hover, .contact-links:focus {
+  color: #333;
 }
 .portfolio-box a {
   color: #fff
@@ -309,7 +328,7 @@ header .header-content .header-content-inner p {
   text-align: center;
   color: #fff;
   opacity: 0;
-  background: rgba(179, 156, 143, .9);
+  background: rgba(19, 23, 26, 0.8);
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
@@ -405,6 +424,30 @@ header .header-content .header-content-inner p {
   cursor: pointer;
 }
 .button-txt:hover:after {
+  width: 100%;
+  left: 0;
+}
+.button-contact {
+  flex: 1 1 auto;
+  padding-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+.button-contact:after {
+  position: absolute;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background: #333;
+}
+.button-contact:hover {
+  cursor: pointer;
+}
+.button-contact:hover:after {
   width: 100%;
   left: 0;
 }
