@@ -101,6 +101,9 @@ h1 {
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
+.contact-link {
+  margin-top: 10px;
+}
 
 /*!
  * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
@@ -185,7 +188,7 @@ aside {
   color: #FAFAFA;
 }
 .navbar-default .navbar-header .navbar-brand:hover, .navbar-default .navbar-header .navbar-brand:focus {
-  color: #13171a;
+  color: #fff;
 }
 .navbar-default .nav > li>a, .navbar-default .nav>li>a:focus {
   text-transform: uppercase;
@@ -199,6 +202,14 @@ aside {
 .navbar-default .nav > li.active>a, .navbar-default .nav>li.active>a:focus {
   color: #ffffff !important;
   background-color: transparent;
+  position: absolute;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  background: pink;
 }
 .navbar-default .nav > li.active>a:hover, .navbar-default .nav>li.active>a:focus:hover {
   background-color: transparent;
@@ -229,7 +240,7 @@ aside {
     color: #FAFAFA;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover, .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #13171a;
+    color: #fff;
   }
   .navbar-default.affix .nav > li>a, .navbar-default.affix .nav>li>a:focus {
     color: #FAFAFA;
@@ -393,7 +404,7 @@ header .header-content .header-content-inner p {
   width: 0;
   left: 50%;
   bottom: 0;
-  height: 3px;
+  height: 2px;
   background: #f7f7f7;
 }
 .button:hover {
@@ -417,7 +428,7 @@ header .header-content .header-content-inner p {
   width: 0;
   left: 50%;
   bottom: 0;
-  height: 3px;
+  height: 2px;
   background: #f7f7f7;
 }
 .button-txt:hover {
@@ -441,7 +452,7 @@ header .header-content .header-content-inner p {
   width: 0;
   left: 50%;
   bottom: 0;
-  height: 3px;
+  height: 2px;
   background: #333;
 }
 .button-contact:hover {
