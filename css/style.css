@@ -240,7 +240,7 @@ a.fa.fa-angle-down:focus {
   cursor: pointer;
   position: relative;
   display: block;
-  margin: 0 auto;
+  margin: 44px auto;
   margin-bottom: 4.5rem;
   height: calc(5vw + 5vh + 2vmin);
   width: calc(5vw + 5vh + 2vmin);
