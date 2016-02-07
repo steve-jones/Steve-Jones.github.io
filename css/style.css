@@ -491,7 +491,7 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     height: 180px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 40px auto;
     cursor: pointer;
 }
 @media screen and (min-width: 1300px) {
