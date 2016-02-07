@@ -167,11 +167,85 @@ a:focus {
     }
 }
 
+#intro {
+    background: url(../img/fenway.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #000;
+}
+#intro .overlay {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(17%, rgba(0, 0, 0, 0.73)), color-stop(35%, rgba(0, 0, 0, 0.66)), color-stop(62%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000', GradientType=0);
+    /* IE6-9 */
+    height: 750px;
+    background-attachment: fixed;
+}
+#intro h1 {
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+#intro p.subtitle {
+    color: #ddd;
+}
+.intro-content {
+    position: absolute;
+    padding: 17% 0 5% 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+.intro-text {
+    font-size: 16px;
+    font-weight: 300;
+    color: #FFF;
+}
+@media screen and (max-width: 1000px) {
+    .intro-content {
+        padding: 22% 0 5% 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .intro-content {
+        padding: 30% 0 5% 0;
+    }
+    .navbar-toggle {
+        padding: 0px 10px;
+    }
+.intro-text {
+    font-size: 16px;
+    font-weight: 300;
+    color: #FFF;
+}
+}
+@media screen and (max-width: 580px) {
+    .intro-content {
+        padding: 45% 0 5% 0;
+    }
+    a.fa.fa-angle-down {
+        margin-top: 80px !important;
+    }
+}
 a.fa.fa-angle-down {
     padding: 10px 14px;
     color: #aaa;
     font-size: 50px;
-    margin-top: 75px;
+    margin-top: 100px;
     transition: all 0.5s;
 }
 a.fa.fa-angle-down:hover {
@@ -180,60 +254,6 @@ a.fa.fa-angle-down:hover {
 }
 a.fa.fa-angle-down:focus {
     text-decoration: none;
-}
-
-.intro {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url(../img/fenway.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.intro .intro-body {
-    display: table-cell;
-    vertical-align: middle;
-    position: absolute;
-    padding: 20% 0 5% 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
-.intro .intro-body .brand-heading {
-  font-size: 40px;
-  font-weight: 300;
-  letter-spacing: 3px;
-}
-
-.intro .intro-body .intro-text {
-    font-size: 16px;
-    font-weight: 300;
-}
-
-@media(min-width:768px) {
-    .intro {
-        height: 100%;
-        padding: 0;
-    }
-
-    .intro .intro-body .brand-heading {
-  font-size: 40px;
-  font-weight: 300;
-  letter-spacing: 3px;
-    }
-
-    .intro .intro-body .intro-text {
-    font-size: 16px;
-    font-weight: 300;
-}
 }
 
 .picture {
@@ -390,6 +410,10 @@ a.fa.fa-angle-down:focus {
     /* IE6-9 */
     padding: 80px 0;
     background-attachment: fixed;
+}
+
+.resume-caption{
+  margin-bottom: 30px;
 }
 
 a.resume-btn {
@@ -578,7 +602,7 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
 
 /* FOR CHANGING COLOR OF ACTIVE CATEGORY */
 .categories a.active {
-    background-color: #C7E5FF;
+    /*background-color: #C7E5FF;*/
 }
 
 /* FOR TRANSITION BEAUTIFULLY */
