@@ -599,6 +599,69 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     }
 }
 
+.modal-header, .modal-footer {
+    background-color: #F0F0F0;
+}
+.modal-header .close {
+    margin-top: -13px;
+}
+.close {
+    font-size: 40px;
+    font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 700px;
+    }
+}
+.modal-title {
+    text-align: center;
+    font-weight: 400;
+}
+.modal-title-description {
+    text-align: center;
+    margin: 10px 0 0 -25px;
+    font-style: italic;
+    font-weight: 400;
+    color: #555;
+}
+.modal-content {
+    border-radius: 0px;
+}
+.modal-body img {
+    margin: 0 auto;
+}
+.modal-body p {
+    text-align: center;
+}
+.modal-body p.visit {
+    margin-top: 50px;
+}
+.modal-body #visit-btn {
+    padding: 10px;
+    color: #000;
+    border: 2px solid #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-top: 40px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.modal-body #visit-btn:hover {
+    color: #fff;
+    background-color: #000;
+}
+.modal-description {
+    font-size: 14px;
+    margin: 0px 25px;
+}
+.modal-footer .btn {
+    border-radius: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
 
 /* FOR CHANGING COLOR OF ACTIVE CATEGORY */
 .categories a.active {
