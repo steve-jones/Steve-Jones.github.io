@@ -658,7 +658,7 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
 }
 
 #contact {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
     background-color: #F0F0F0;
     color: #000;
@@ -753,7 +753,9 @@ ul.banner-social-buttons li a:hover, ul.banner-social-buttons li a:active {
 }
 
 footer {
+  color: #fff;
     padding: 50px 0;
+    background-color: #222;
 }
 
 footer p {
