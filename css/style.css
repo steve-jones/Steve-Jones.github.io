@@ -240,7 +240,7 @@ a.fa.fa-angle-down:focus {
   cursor: pointer;
   position: relative;
   display: block;
-  margin: 40px auto;
+  margin: 0 auto;
   margin-bottom: 4.5rem;
   height: calc(5vw + 5vh + 2vmin);
   width: calc(5vw + 5vh + 2vmin);
@@ -491,7 +491,7 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     height: 180px;
     overflow: hidden;
     position: relative;
-    margin: 40px auto;
+    margin: 0 auto;
     cursor: pointer;
 }
 @media screen and (min-width: 1300px) {
