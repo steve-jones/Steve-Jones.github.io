@@ -814,6 +814,9 @@ ul.banner-social-buttons li a:hover, ul.banner-social-buttons li a:active {
     font-size: 14px;
     font-weight: 300;
 }
+.copyright-text {
+    margin-top: 15px;
+}
 
 footer {
   color: #fff;
