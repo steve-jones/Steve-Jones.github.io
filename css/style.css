@@ -721,16 +721,16 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
 }
 
 #contact {
-    padding-top: 20px;
+    /*padding-top: 20px;
     padding-bottom: 20px;
     background-color: #F0F0F0;
-    color: #000;
+    color: #000;*/
 }
 #contact p {
-    font-size: 16px;
+    /*font-size: 16px;
     font-weight: 300;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 0 auto;*/
 }
 
 ul.banner-social-buttons {
