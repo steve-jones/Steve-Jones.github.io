@@ -257,7 +257,6 @@ a.fa.fa-angle-down:focus {
 }
 
 .picture {
-  cursor: pointer;
   position: relative;
   display: block;
   margin: 44px auto;
