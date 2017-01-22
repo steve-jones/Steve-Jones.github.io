@@ -299,10 +299,10 @@ a.fa.fa-angle-down:focus {
 .picture.hasPulse:after {
   border-color: rgba(212, 212, 212, .1);
   border-width: 2px;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px
+  top: -25px;
+  left: -25px;
+  right: -25px;
+  bottom: -25px
 }
 
 .btn-circle {
