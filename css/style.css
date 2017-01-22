@@ -567,6 +567,7 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
     transition: all 0.3s;
+    padding-top: 15px;
 }
 .portfolio-hover:hover .hover-text>h6 {
     opacity: 1;
