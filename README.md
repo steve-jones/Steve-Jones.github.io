@@ -1,12 +1,12 @@
 # How To Build a Personal Website
-###### Guides & Resources for Building a Personal Website to Help Land a Software Engineering Position
+###### Guides & Resources for Building a Portfolio Website to Help Land a Software Engineering Position
 
 ### Summary
-Many software engineers have a personal website where they showcase themselves. This is an ideal place to point recruiters to in order to display your technical abilities and provide them with any relevant information about yourself. Generally on a personal website you will provide information about yourself, contact information, a resume, and a portfolio. This directory provides links to articles I wrote that describe my discoveries of best practices and optimal strategies to build and display a personal website to enhance your chances in the hiring process.
+Many software engineers have a portfolio website where they showcase themselves. This is an ideal place to point recruiters to in order to display your technical abilities and provide them with any relevant information about yourself. Generally on a portfolio website you will provide information about yourself, contact information, a resume, and a portfolio. This directory provides links to articles I wrote that describe my discoveries of best practices and optimal strategies to build and display a personal website to enhance your chances in the hiring process.
 
 ### This Repository
-This repository includes all the code for my personal website and I welcome you to clone it to use as a template.
-###### My Personal Website: http://stevejones.io
+This repository includes all the code for my portfolio website and I welcome you to clone it to use as a template.
+###### My Portfolio Website: http://stevejones.io
 
 ### Directory
 1. [What is a Personal Website](https://medium.com/@steve_jones/what-is-a-personal-website-3e18926847ba#.ad5u6juwy)
