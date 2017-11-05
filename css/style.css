@@ -540,11 +540,11 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     padding: 15% 20px;
     height: 100%;
     width: 100%;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s;
 }
 .portfolio-hover:hover .hover-text {
-    opacity: 1;
+    opacity: 0;
 }
 .portfolio-hover .hover-text>h4 {
     opacity: 0;
