@@ -487,7 +487,9 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     text-transform: lowercase;
 }
 #portfolio .portfolio-item {
-    margin: 0 0 35px 0;
+    margin: 0 0 15px 0;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 @media screen and (max-width: 1200px) {
     #portfolio .portfolio-item {
@@ -536,24 +538,49 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     text-align: center;
     margin: 0 auto;
     color: #ffffff;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15% 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20% 15px;
     height: 100%;
     width: 100%;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s;
 }
+.portfolio-hover .hover-text .hover-text-box {
+    display: inline-block;
+}
+.portfolio-hover .hover-text .hover-text-box h6 {
+    margin: 0;
+}
+.portfolio-hover img {
+  max-width: 100%;
+
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
 .portfolio-hover:hover .hover-text {
-    opacity: 1;
+    opacity: 0;
+}
+.portfolio-hover:hover img {
+  -moz-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+.portfolio-hover h4 {
+  margin: 0;
+}
+.portfolio-hover hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 .portfolio-hover .hover-text>h4 {
-    opacity: 0;
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
     transition: all 0.3s;
 }
 .portfolio-hover:hover .hover-text>h4 {
-    opacity: 1;
+    opacity: 0;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
@@ -563,14 +590,14 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
     font-style: italic;
     font-weight: 300;
     /*font-family: 'Roboto Slab', sans-serif;*/
-    opacity: 0;
+    opacity: 1;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
     transition: all 0.3s;
     padding-top: 15px;
 }
 .portfolio-hover:hover .hover-text>h6 {
-    opacity: 1;
+    opacity: 0;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateY(0);
     transform: translateY(0);
