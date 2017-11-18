@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="steve jones, steve, jones, stevejones.io, georgia tech, georiga institute of technology, atlanta, boston, umass, umass amherst, university of massachusetts, front-end, web, website, computer science, software, developer, engineer, designer, ux" />
+  <meta name="author" content="Steve Jones" />
+  <meta name="description" content="Developer | Designer | Researcher" />
+
+  <title>MLB Statistics Visualization - Steve Jones</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="http://stevejones.io/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" type="text/css" href="http://stevejones.io/css/animate.css">
+
+  <!-- Custom CSS -->
+  <!-- <link href="../css/style.css" rel="stylesheet"> -->
+  <!-- Project CSS -->
+  <link href="http://stevejones.io/css/project.css" rel="stylesheet">
+  <!-- BOOTSTRAP STYLE SHEET -->
+  <link href="http://stevejones.io/css/bootstrap.css" rel="stylesheet" />
+  <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
+  <link href="http://stevejones.io/js/source/jquery.fancybox.css" rel="stylesheet" />
+
+  <!-- Custom Fonts -->
+  <link href="http://stevejones.io/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80316791-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+  <style>
+    #intro {
+        background: url(../portfolio/mlb-stat-vis/CS7450-HighFidelity-II.png);
+      }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <span class="light">Steve</span> Jones
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#resume">Resume</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Intro Header -->
+  <section id="intro" class="intro text-center">
+    <div class="overlay">
+      <div class="intro-content">
+        <h1 class="brand-heading animated fadeInDown delay-05s">Steve Jones</h1>
+        <div class="picture hasPulse" id=picture></div>
+        <p class="intro-text animated fadeIn delay-2s">I'm a graduate student, designer, developer, and researcher</p>
+      </div>
+    </div>
+    <div class="scroll-arrow">
+      <a href="#resume" class="fa fa-angle-down page-scroll">
+      <!-- <i class="fa fa-angle-down page-scroll"></i> -->
+      </a>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <div class="text-center">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="resume-caption">Check out my resume</h2>
+              <div id="resume-button">
+                <a class="resume-btn animated bounceIn" href="SteveJones-Resume.pdf" target="_blank">Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <!-- FILTER PORTFOLIO START -->
+      <div class="row text-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="portfolio-title">Portfolio</h2>
+          <!-- <h5 class="filter-text">(click tags to filter by type)</h5> -->
+        </div>
+        <div class="col-md-12">
+          <div class="categories">
+            <a href="#" data-filter="*" class="portfolio-btn">All</a>
+            <a href="#" data-filter=".writing" class="portfolio-btn">WRITING</a>
+            <a href="#" data-filter=".project" class="portfolio-btn">PROJECTS</a>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center" id="portfolio-div">
+        <!-- pynd.it -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#pyndit">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Pynd.it - Design Process</h4>
+                <hr>
+                <h6>Social event broadcasting app</h6>
+              </div>
+            </div>
+            <img src="img/projects/pyndit/pyndit.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- honors-thesis -->
+        <div class="col-md-4 col-sm-6 portfolio-item writing project">
+          <div class="portfolio-hover" data-toggle="modal" href="#honors-thesis">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Undergrad Honors Thesis</h4>
+                <hr>
+                <h6>UX Research of the Floating Action Button</h6>
+              </div>
+            </div>
+            <img src="img/projects/honors-thesis/honors-thesis.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- phet-gestures -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#phet-gestures">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Georgia Tech Sonification Lab</h4>
+                <hr>
+                <h6>Gesture Input for Accessible STEM Education</h6>
+              </div>
+            </div>
+            <img src="img/projects/phet-gestures/phet-gestures.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- sketch-article -->
+        <div class="col-md-4 col-sm-6 portfolio-item writing">
+          <div class="portfolio-hover" data-toggle="modal" href="#sketch-article">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Why I Dumped PS for Sketch</h4>
+                <hr>
+                <h6>Medium Article with +2,500 reads</h6>
+              </div>
+            </div>
+            <img src="img/writings/sketch-article/sketch-article.jpg" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- care-circles -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#care-circles">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>CareCircles - Design Process</h4>
+                <hr>
+                <h6>UX Research of Students with Children</h6>
+              </div>
+            </div>
+            <img src="img/projects/care-circles/care-circles.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- instagram-sketch-template -->
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <div class="portfolio-hover" data-toggle="modal" href="#instagram-sketch-template">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Instagram Sketch Template</h4>
+                <hr>
+                <h6>Instagram template UI kit built from scratch</h6>
+              </div>
+            </div>
+            <img src="img/projects/instagram-sketch-template/instagram-sketch-template.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- instagram-redesign -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#instagram-redesign">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Instagram Redesign</h4>
+                <hr>
+                <h6>Researching Features for Power Users</h6>
+              </div>
+            </div>
+            <img src="img/writings/instagram-redesign/instagram-redesign.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- personal-website -->
+        <div class="col-md-4 col-sm-6 portfolio-item writing">
+          <div class="portfolio-hover" data-toggle="modal" href="#personal-website">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>How to Build a Personal Website</h4>
+                <hr>
+                <h6>8 Article Guide to Building a Personal Wesbite</h6>
+              </div>
+            </div>
+            <img src="img/writings/personal-website/personal-website.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- assignment-tracking -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#assignment-tracking">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Assignment Tracking Research</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/assignment-tracking/assignment-tracking.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- 3D-augmented-reality-app -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#3D-augmented-reality-app">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>3D Augmented Reality App</h4>
+                <hr>
+                <h6>A 3D augmented reality scene is displayed when camera is looking at a $20 bill</h6>
+              </div>
+            </div>
+            <img src="img/projects/3D-augmented-reality-app/3D-augmented-reality-app.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- moodio -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#moodio">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>MOOD.IO</h4>
+                <hr>
+                <h6>Mood tracking Android application</h6>
+              </div>
+            </div>
+            <img src="img/projects/moodio/moodio.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- molecular-playground -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#molecular-playground">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Molecular Playground</h4>
+                <hr>
+                <h6>Managed team of 10 undergrads to design &amp; build web app for client</h6>
+              </div>
+            </div>
+            <img src="img/projects/molecular-playground/molecular-playground.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- mr-robot -->
+        <div class="col-md-4 col-sm-6 portfolio-item writing">
+          <div class="portfolio-hover" data-toggle="modal" href="#mr-robot">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Mr. Robot Article</h4>
+                <hr>
+                <h6>A Hacking Show that Gets it Right</h6>
+              </div>
+            </div>
+            <img src="img/writings/mr-robot/mr-robot.jpg" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- arabella-dane-logo -->
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <div class="portfolio-hover" data-toggle="modal" href="#arabella-dane-logo">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Arabella Dane Logo</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/arabella-dane-logo/arabella-dane-logo.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- arsenault-cline-logo -->
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <div class="portfolio-hover" data-toggle="modal" href="#arsenault-cline-logo">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Arsenault &amp; Cline Logo</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/arsenault-cline-logo/arsenault-cline-logo.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- benjamin-nutter -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#benjamin-nutter">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>BenjaminNutter.com</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/benjamin-nutter/benjamin-nutter.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- francies-boutique -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#francies-boutique">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>FranciesBoutique.com</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/francies-boutique/francies-boutique.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- sigep-umass -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#sigep-umass">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>SigEpUMass.com</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/sigep-umass/sigep-umass.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- umass-sga -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#umass-sga">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>UMass-SGA.com</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/umass-sga/umass-sga.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- tbba -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#tbba">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>TopsfieldBoxford.org</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/tbba/tbba.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+        <!-- volt-up -->
+        <div class="col-md-4 col-sm-6 portfolio-item project">
+          <div class="portfolio-hover" data-toggle="modal" href="#volt-up">
+            <div class="hover-text">
+              <div class="hover-text-box">
+                <h4>Volt-Up.com</h4>
+                <hr>
+                <h6></h6>
+              </div>
+            </div>
+            <img src="img/projects/volt-up/volt-up.png" class="portfolio-image img-responsive" alt="">
+          </div>
+        </div>
+
+
+      </div>
+      <!-- FILTER PORTFOLIO END -->
+    </container>
+  </section>
+
+  <!--======== PORTFOLIO LIGHTBOX ========-->
+  <!-- pyndit -->
+  <div class="modal fade" id="pyndit" tabindex="-1" role="dialog" aria-labelledby="pyndit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Pynd.it - Design Process</h4>
+          <h6 class="modal-title-description">Social event broadcasting app</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/pyndit/pyndit.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://medium.com/@steve_jones/design-process-pynd-it-bad7f28507a5" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- honors-thesis lightbox -->
+  <div class="modal fade" id="honors-thesis" tabindex="-1" role="dialog" aria-labelledby="honors-thesis" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">UX Research of the Floating Action Button</h4>
+          <h6 class="modal-title-description">Undergrad Honors Thesis</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/honors-thesis/honors-thesis.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="/img/projects/honors-thesis/User-Experience-of-the-Floating-Action-Button.pdf" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- phet-gestures -->
+  <div class="modal fade" id="phet-gestures" tabindex="-1" role="dialog" aria-labelledby="phet-gestures" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Gesture Input for Accessible STEM Education</h4>
+          <h6 class="modal-title-description">Georgia Tech Sonification Lab</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/phet-gestures/phet-gestures.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://www.youtube.com/watch?v=McUSO5QpmI0" target="_blank" id="visit-btn">Watch Video</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sketch-article -->
+  <div class="modal fade" id="sketch-article" tabindex="-1" role="dialog" aria-labelledby="sketch-article" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Why I Dumped Photoshop for Sketch</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/writings/sketch-article/sketch-article.jpg" alt="">
+          </p>
+          <p class="modal-description">Medium Article with +2,500 reads</p>
+          <p class="visit"><a href="https://medium.com/sketch-app-sources/why-i-dumped-photoshop-for-sketch-192f2960ec08#.qkvo78o5o" target="_blank" id="visit-btn">View Article</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- care-circles -->
+  <div class="modal fade" id="care-circles" tabindex="-1" role="dialog" aria-labelledby="care-circles" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">CareCircles - Design Process</h4>
+          <h6 class="modal-title-description">UX Research of Graduate Student with Children</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/care-circles/care-circles.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://medium.com/@steve_jones/design-process-carecircles-f9d0946c3d79#.otywutob3" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- instagram-sketch-template lightbox -->
+  <div class="modal fade" id="instagram-sketch-template" tabindex="-1" role="dialog" aria-labelledby="instagram-sketch-template" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Instagram Sketch Template</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/instagram-sketch-template/instagram-sketch-template.png" alt="">
+          </p>
+          <p class="modal-description">Instagram template UI kit built from scratch in Sketch</p>
+          <p class="visit"><a href="http://www.sketchappsources.com/free-source/1716-instagram-template-ios-ui-kit-sketch-freebie-resource.html" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- instagram-redesign -->
+  <div class="modal fade" id="instagram-redesign" tabindex="-1" role="dialog" aria-labelledby="instagram-redesign" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Instagram Redesign</h4>
+          <h6 class="modal-title-description">Researching Features for Power Users</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/writings/instagram-redesign/instagram-redesign.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://medium.com/@steve_jones/instagram-redesign-implementing-features-for-power-users-4c7024e86bb1#.d7gmsbm9p" target="_blank" id="visit-btn">View Report</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- assignment-tracking -->
+  <div class="modal fade" id="assignment-tracking" tabindex="-1" role="dialog" aria-labelledby="assignment-tracking" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Assignment Tracking UX Research</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/assignment-tracking/assignment-tracking.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="img/projects/assignment-tracking/Assignment-Tracking-UX-Research.pdf" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 3D-augmented-reality-app lightbox -->
+  <div class="modal fade" id="3D-augmented-reality-app" tabindex="-1" role="dialog" aria-labelledby="3D-augmented-reality-app" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">3D Augmented Reality App</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/3D-augmented-reality-app/3D-augmented-reality-app.png" alt="">
+          </p>
+          <p class="modal-description">A 3D augmented reality scene is displayed when camera is looking at a $20 bill</p>
+          <p class="visit"><a href="https://play.google.com/store/apps/details?id=com.JonesSwiftCS390CG.FinalProject" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moodio -->
+  <div class="modal fade" id="moodio" tabindex="-1" role="dialog" aria-labelledby="moodio" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">MOOD.IO</h4>
+          <h6 class="modal-title-description">Mood tracking Android application</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/moodio/moodio.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://github.com/Steve-Jones/MoodIO" target="_blank" id="visit-btn">View</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- personal-website -->
+  <div class="modal fade" id="personal-website" tabindex="-1" role="dialog" aria-labelledby="personal-website" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">How To Build a Personal Website</h4>
+          <h6 class="modal-title-description">8 Article Guide to Help Build a Personal Website</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/writings/personal-website/personal-website.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://github.com/Steve-Jones/Steve-Jones.github.io/blob/master/README.md" target="_blank" id="visit-btn">Read Articles</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- molecular-playground lightbox -->
+  <div class="modal fade" id="molecular-playground" tabindex="-1" role="dialog" aria-labelledby="molecular-playground" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Molecular Playground</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/molecular-playground/molecular-playground.png" alt="">
+          </p>
+          <p class="modal-description">Managed team of 10 undergrads to design &amp; build web app for client</p>
+          <p class="visit"><a href="http://teamdropout.com" target="_blank" id="visit-btn">Visit Site</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mr-robot -->
+  <div class="modal fade" id="mr-robot" tabindex="-1" role="dialog" aria-labelledby="mr-robot" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Mr. Robot Article</h4>
+          <h6 class="modal-title-description">Mr. Robot: A Hacking Show that Gets it Right</h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/writings/mr-robot/mr-robot.jpg" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="https://medium.com/@steve_jones/mr-robot-a-hacking-show-that-gets-it-right-b447f854cb5f#.qp8wr0k6j" target="_blank" id="visit-btn">Read Article</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- arabella-dane-logo -->
+  <div class="modal fade" id="arabella-dane-logo" tabindex="-1" role="dialog" aria-labelledby="arabella-dane-logo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Arabella Dane Logo</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/arabella-dane-logo/arabella-dane-logo.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <!-- <p class="visit"><a href="https://github.com/Steve-Jones/PinndIt" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- arsenault-cline-logo -->
+  <div class="modal fade" id="arsenault-cline-logo" tabindex="-1" role="dialog" aria-labelledby="arsenault-cline-logo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Arsenault &amp; Cline Logo</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/arsenault-cline-logo/arsenault-cline-logo.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <!-- <p class="visit"><a href="https://github.com/Steve-Jones/PinndIt" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- benjamin-nutter -->
+  <div class="modal fade" id="benjamin-nutter" tabindex="-1" role="dialog" aria-labelledby="benjamin-nutter" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">BenjaminNutter.com</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/benjamin-nutter/benjamin-nutter.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="http://benjaminnutter.com" target="_blank" id="visit-btn">Visit Site</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- francies-boutique -->
+  <div class="modal fade" id="francies-boutique" tabindex="-1" role="dialog" aria-labelledby="francies-boutique" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">FranciesBoutique.com</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/francies-boutique/francies-boutique.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <!-- <p class="visit"><a href="" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sigep-umass -->
+  <div class="modal fade" id="sigep-umass" tabindex="-1" role="dialog" aria-labelledby="sigep-umass" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">SigEpUMass.com</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/sigep-umass/sigep-umass.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <p class="visit"><a href="http://sigepumass.com" target="_blank" id="visit-btn">Visit Site</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- umass-sga -->
+  <div class="modal fade" id="umass-sga" tabindex="-1" role="dialog" aria-labelledby="umass-sga" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">UMass-SGA.com</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/umass-sga/umass-sga.png" alt="">
+          </p>
+          <p class="modal-description">UMass Student Government Association Website</p>
+          <!-- <p class="visit"><a href="https://github.com/Steve-Jones/PinndIt" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- tbba -->
+  <div class="modal fade" id="tbba" tabindex="-1" role="dialog" aria-labelledby="tbba" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">TopsfieldBoxford.org</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/tbba/tbba.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <!-- <p class="visit"><a href="" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- volt-up -->
+  <div class="modal fade" id="volt-up" tabindex="-1" role="dialog" aria-labelledby="volt-up" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Volt-Up.com</h4>
+          <h6 class="modal-title-description"></h6>
+        </div>
+        <div class="modal-body">
+          <p>
+            <img class="img-responsive img-centered" src="img/projects/volt-up/volt-up.png" alt="">
+          </p>
+          <p class="modal-description"></p>
+          <!-- <p class="visit"><a href="" target="_blank" id="visit-btn">Visit Site</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <section id="contact">
+    <footer>
+      <div class="copyright">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <h2>Contact</h2>
+              <p>Shoot me an email or check out my online profiles</p>
+              <p><a href="mailto:steve@stevejones.io">steve@stevejones.io</a></p>
+            </div>
+            <div class="col-md-12 text-center">
+              <!-- <h3>Other places you can find me</h3> -->
+              <ul class="list-inline banner-social-buttons animated fadeIn">
+                <!-- Facebook Button -->
+                <li><a id="facebook" href="https://www.facebook.com/seascapetech" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <!-- Twitter Button -->
+                <li><a id="twitter" href="https://twitter.com/_Steve_Jones" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <!-- Instagram Button -->
+                <li><a id="instagram" href="https://instagram.com/steve_jones_/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <!-- GitHub Button -->
+                <li><a id="github" href="https://github.com/Steve-Jones" target="_blank"><i class="fa fa-github"></i></a></li>
+                <!-- Codepen Button -->
+                <li><a id="codepen" href="http://codepen.io/Steve-Jones/" target="_blank"><i class="fa fa-codepen"></i></a></li>
+                <!-- LinkedIn Button -->
+                <li><a id="linkedin" href="https://www.linkedin.com/in/stevejones0" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright-text">
+            <p>This website designed and developed by me: <a href="https://github.com/Steve-Jones/Steve-Jones.github.io/blob/master/README.md" target="_blank">View it on Github</a></p>
+            <p>&copy; Steve Jones
+              <script type="text/javascript">
+              document.write(new Date().getFullYear());
+              </script>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/theme.js"></script>
+
+  <!-- REQUIRED SCRIPTS FILES -->
+  <!-- CORE JQUERY SCRIPTS -->
+  <!-- <script src="js/jquery-1.11.1.js"></script> -->
+  <!--  FANCYBOX PLUGIN -->
+  <script src="js/source/jquery.fancybox.js"></script>
+  <!-- ISOTOPE SCRIPTS -->
+  <script src="js/jquery.isotope.js"></script>
+  <!-- CUSTOM SCRIPTS REQIRED-->
+  <script src="js/portfolio.js"></script>
+
+  <!-- ====================================================================================
+
+
+  .NNOZZ8DON,.
+  .,8Z88ZZ8ZZNN8OOO8..
+  DDOOODOZNZD8DOOONNDN8.
+  .Z888N888O88ODDDODDDOOO8ON.
+  =8O8D8D8DD8D8ODD8DDDOO8OO88N.
+  8OO8D8DDDDDDDDDD8DDD8DOOZO8I
+  .8O888$ONNNMOIDD8DMOZO8ODD8D8O.
+  .888==~~~~~~~~~~~~~~~~~~~~~N888,
+  D888==~~~~~~~~~~~~~~~~~~~~~~=888.     ==============================
+  .888O=~~~~~~~~~~~~~~~~~~~~~~~~=88=     |                            |
+  .88OI=~~~~~~~~~~~~~~~~~~~~~~~~=?8O.    |         HEY THERE!         |
+  .ZOOO==~~~~~~~~~~~~~~~~~~~~~~~~==OO     |                            |
+  .DOOO==~~~~~~~~~~~===~~~~~~~~~~==OO     |     THANKS FOR CHECKING    |
+  OOOO==~~~~~~~~~~~~~~~~~~~~~~~~==OO.    |        OUT MY SITE         |
+  OOO===~~~~~~~~~~~~~~~~~~~~~~~~==OO.    |                            |
+  .DOO==~~$$$$$$$~~~~~~~~~~$$$$~~~=OO.    |     SHOOT ME AN EMAIL:     |
+  ~~~OO==~~~~~~~~==~~~~~~++=~~~~+$~=ZZ     |    STEVE@STEVEJONES.IO     |
+  ID~O==~~~~M888=7+~~~~Z+?+D~7~~~~=?Z~.   |                            |
+  .O++I=+~~~~~~~~~=+~~~~+DIOZ.:+~~~=+~=+   ==============================
+  ~8~I=~~~~~~~~~~~~~~~~=~~~~~~~~~~=++M
+  ,$I+=~~~~~~~~~~~~~~~~~~~~~~~~~~~=Z~~.
+  .=~I=~~~~~~~~~~~~~~~~~~~~~~~~~~~=M~8
+  .~~=~~~~~~~~~~=~~~~~~+~~~~~~~~~=?O.
+  +~N~~~~~~~~~~~~~~~~=~?~~~~~~~~=~~.
+  .?+~~~~~~~~~~~+++$~~~~~~~~~~~=...
+  .+~~~~~~~~~~~~~~~~~~~~~~~~~=D
+  $+~~~~~I~~+?=~~~~~~~~~~~~~=.
+  .++~~~~~~+++++????+~~~~~~=+
+  ~++~~~~~~~~~~~~~~~~~~~~+=.
+  ~+++~~~~~~~~~~~~~~~~~~==.
+  ~~+7+~~~~~~===~~~~~~~~=.
+  .+~~+++~~~~~~~~~~~~~~~Z.
+  .+ ~~~++I~~~~~~~~~~~~~~.
+  .+N.  .~~===$~~~~~~~~~8~~.
+  .NNM.   ..I~===========~~?.
+  .MNNNN8$      N~========~~~M.
+  .NNNNNNNN7.      .I~~~~~~~~=.?
+  ..:NNNNNNNNNNNN .       ..~~~~~I. .N
+  .NNNNNNNDNNNNNNNNN,+         .8DD.. .NND..
+  ..MNNNNNNNNNNDNNNNNNNNNN?M        =NDD88. DNNNDN~..
+  ..?NNNNNNNNNNNNNNNNNNNNNNNNNN$=.     .NDD8888 DNNNNNNNNN..
+  .8NNNNNNNNNNNNNNNNNNNNNNNNNNNNNN...    =NN8888D$..NNNNNNNNNN=.
+  NNNNNNNNNNNNNNNNNNNNNNNDNNNNNNNNN .:. Z~ MNNNND.Z..NNNNNNNNNNNM
+  NNNNNNNNNNNNNNNNNNNNNNDNNNNNNNNNNN. M.~  ..NNND8..  NNNDNNNNNNNN.
+  NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNND  .     NNDDD.   .NNNNNDNNNNNN
+  NNNNMNNNNNNNNNNNNNNNNMNNNNNNNNNNNNNM.     .NN8888    MNNNNNNNNNNN.
+  NNNNNMNNNNNNNNNNNNNNNNMDNNNNNNNNNNNN$.    +NNDD88~   .NNNNNMNNNNND
+  NNNNNNMNNNNNNNNNNNNNNNNMMNNNNNNNNNNNN:    MNNDDD88.   7NNNNDNNNNNN.
+  NNNNNNNMNNNNNNNNNNNNNNNNNMDNNNNNNNNNNN.   MNNDDDDDM.   NNNNNNNNNNND
+  NNNNNNNNMMNNNNNNNNNNNNNNNNMMNNNNNNNNNNN.  MNN88DDDD.   MNNNNMNNNNNN
+  ==================================================================================== -->
+
+</body>
+
+</html>
