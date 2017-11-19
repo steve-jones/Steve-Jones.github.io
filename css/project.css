@@ -169,9 +169,10 @@ a:focus {
 
 #intro {
     background: url(../img/fenway.jpg);
-    height: 100%;
+    height: 70%;
     background-size: cover;
     background-position: center;
+    background-position-y: 91px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: #000;
@@ -192,7 +193,7 @@ a:focus {
     /* W3C */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000', GradientType=0);
     /* IE6-9 */
-    /*height: 750px;*/
+    height: 100%;
     background-attachment: fixed;
 }
 #intro h1 {
@@ -247,69 +248,6 @@ a:focus {
     a.fa.fa-angle-down {
         margin-top: 80px !important;
     }
-}
-a.fa.fa-angle-down {
-    padding: 10px 14px;
-    color: #aaa;
-    font-size: 50px;
-    /*margin-top: 100px;*/
-    transition: all 0.5s;
-}
-a.fa.fa-angle-down:hover {
-    color: #fff;
-    text-decoration: none;
-}
-a.fa.fa-angle-down:focus {
-    text-decoration: none;
-}
-
-.picture {
-  position: relative;
-  display: block;
-  margin: 44px auto;
-  margin-bottom: 4.5rem;
-  height: calc(5vw + 5vh + 2vmin);
-  width: calc(5vw + 5vh + 2vmin);
-  border-radius: 500px;
-  background: url(/img/SteveJones.jpg) center center no-repeat;
-  background-size: cover;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, .23), 0 3px 12px rgba(0, 0, 0, .16);
-  transition: box-shadow .3s ease-in-out;
-  animation-name: bounceIn;
-  animation-iteration-count: 1s;
-  animation-duration: .9s;
-  animation-delay: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden
-}
-.picture:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, .23), 0 10px 40px rgba(0, 0, 0, .19)
-}
-.picture.hasPulse:after, .centered-info .picture.hasPulse:before {
-  content: '';
-  position: absolute;
-  border: 0 solid rgba(250, 250, 250, .1);
-  border-radius: 100%;
-  animation: pulse 3s ease-in-out 0s infinite
-}
-.picture.hasPulse:before {
-  border-color: rgba(250, 250, 250, .1);
-  border-width: 4px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0
-}
-.picture.hasPulse:after {
-  border-color: rgba(212, 212, 212, .1);
-  border-width: 2px;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px
 }
 
 .btn-circle {
@@ -390,248 +328,112 @@ a.fa.fa-angle-down:focus {
     padding-top: 100px;
 }
 
-#resume {
-    background: url(../img/resume-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-color: #000;
-    color: #fff;
-}
-#resume .overlay {
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(17%, rgba(0, 0, 0, 0.73)), color-stop(35%, rgba(0, 0, 0, 0.66)), color-stop(62%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.4)));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%);
-    /* W3C */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000', GradientType=0);
-    /* IE6-9 */
-    padding: 80px 0;
-    background-attachment: fixed;
-}
-
-.resume-caption{
-  margin-bottom: 30px;
-}
-
-a.resume-btn {
-    background: none;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ddd;
-    border: 2px solid #ccc;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
-    letter-spacing: 1px;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
-}
-a.resume-btn:hover, a.resume-btn:active {
-    /*background-position: -100% 100%;*/
-    color: #fff;
-    /*font-weight: 400;*/
-    border: 2px solid #ccc;
-    background-color: rgba(254, 254, 254, 0.2);
-    padding: 10px 30px;
-}
-a.portfolio-btn {
-    background: none;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #000;
-    border: 2px solid #000;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
-    letter-spacing: 1px;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
-}
-a.portfolio-btn:hover, a.portfolio-btn:active {
-    /*background-position: -100% 100%;*/
-    color: #000;
-    /*font-weight: 400;*/
-    border: 2px solid #000;
-    background-color: rgba(254, 254, 254, 0.2);
-    padding: 10px 30px;
-}
-
 /* ===PORTFOLIO=== */
-#portfolio {
+#project {
     padding-top: 20px;
     padding-bottom: 20px;
     background: #fff;
 }
-#portfolio .portfolio-row {
-    margin-left: 50px;
-    margin-right: 50px;
+
+#project p {
+    font-size: 14px;
+    color: #777777;
 }
-@media screen and (max-width: 480px) {
-    #portfolio .portfolio-row {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
-#portfolio .portfolio-title {
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-}
-#portfolio .filter-text {
-    margin-bottom: 16px;
-    text-transform: lowercase;
-}
-#portfolio .portfolio-item {
-    margin: 0 0 15px 0;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-@media screen and (max-width: 1200px) {
-    #portfolio .portfolio-item {
-        margin: 15px 0;
-    }
+#project li {
+    font-size: 14px;
+    color: #777777;
 }
 
-#portfolio .portfolio-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+#light {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 25px;
 }
-@media screen and (min-width: 1300px) {
-    #portfolio .portfolio-image {
-        height: 200px;
-    }
-}
-@media screen and (max-width: 768px) {
-    #portfolio .portfolio-image {
-        height: 100%;
-    }
-}
-.portfolio-item .portfolio-hover {
-    height: 180px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    cursor: pointer;
-}
-@media screen and (min-width: 1300px) {
-    #portfolio .portfolio-hover {
-        height: 200px;
-    }
+#dark {
+  background-color: rgb(247, 248, 250);
+  padding-top: 20px;
+  padding-bottom: 25px;
 }
 
-@media screen and (max-width: 768px) {
-    .portfolio-item .portfolio-hover {
-        height: 100%;
-    }
+/*MacBook*/
+.pca-hold {
+  width: 500px;
+  margin: 0 62.5px;
 }
-.portfolio-item .portfolio-hover img {
-    margin: 0 auto;
+.pca-hold .pca-main {
+  display: block;
+  position: relative;
+  background-color: #c8c8c8;
+  border: 15px solid #2d2d2d;
+  height: 320px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
-.portfolio-hover .hover-text {
-    position: absolute;
-    text-align: center;
-    margin: 0 auto;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20% 15px;
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-    transition: all 0.5s;
+.pca-hold .pca-main:after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 5px;
+  height: 5px;
+  background-color: #959595;
+  border-radius: 100%;
 }
-.portfolio-hover .hover-text .hover-text-box {
-    display: inline-block;
+.pca-hold .pca-inner {
+  display: block;
 }
-.portfolio-hover .hover-text .hover-text-box h6 {
-    margin: 0;
+.pca-hold .pca-sub {
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 25px;
 }
-.portfolio-hover img {
-  max-width: 100%;
+.pca-hold .pca-sub .pca-top {
+  position: absolute;
+  bottom: 0;
+  left: -62.5px;
+  display: block;
+  width: 625px;
+  height: 25px;
+  border-bottom-left-radius: 55px;
+  border-bottom-right-radius: 55px;
+  background-color: #e8e8e8;
+  opacity: 1;
+  z-index: 2;
+}
+.pca-hold .pca-sub .pca-bot {
+  display: block;
+  width: 200px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: #B1B1B1;
+  border-radius: 0 0 225px 225px;
+  opacity: 1;
+  z-index: 2;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
 
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+.pca-hold .pca-bg {
+  background: url(file:///Users/stevejones/Google%20Drive/%5B%20GitHub%20%5D/Steve-Jones.github.io/portfolio/mlb-stat-vis/CS7450-HighFidelity-II.png);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: #000;
 }
-.portfolio-hover:hover .hover-text {
-    opacity: 0;
-}
-.portfolio-hover:hover img {
-  -moz-transform: scale(1.03);
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
-}
-.portfolio-hover h4 {
-  margin: 0;
-}
-.portfolio-hover hr {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.portfolio-hover .hover-text>h4 {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    transition: all 0.3s;
-}
-.portfolio-hover:hover .hover-text>h4 {
-    opacity: 0;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-}
-.portfolio-hover .hover-text>h6 {
-    text-transform: capitalize;
-    font-style: italic;
-    font-weight: 300;
-    /*font-family: 'Roboto Slab', sans-serif;*/
-    opacity: 1;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    transition: all 0.3s;
-    padding-top: 15px;
-}
-.portfolio-hover:hover .hover-text>h6 {
-    opacity: 0;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: rgba(0, 0, 0, .8);
-    -webkit-transition: all ease .3s;
-    -moz-transition: all ease .3s;
-    transition: all ease .3s;
-}
-#portfolio * {
-    z-index: 2;
-}
-@media screen and (max-width:767px) {
-    #portfolio .portfolio-item {
-        margin-bottom: 30px;
-    }
-}
-@media screen and (max-width: 480px) {
-    #portfolio {
-        padding: 60px 0px;
-    }
-}
+
+
 
 .modal-header, .modal-footer {
     background-color: #F0F0F0;
