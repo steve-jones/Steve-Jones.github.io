@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 10px;
     text-transform: uppercase;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 300;
@@ -64,6 +64,15 @@ a:focus {
     text-decoration: none;
     color: #1d9b6c;
 }
+
+.table > tbody > tr > td, .table > tbody > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #777777;
+  }
 
 .wp1, .wp2, .wp3, .wp3-1, .wp3-2, .wp3-3, .wp3-4, .wp3-5, .wp4, .wp5, .wp6 {
     visibility: hidden;
@@ -339,9 +348,15 @@ a:focus {
     font-size: 14px;
     color: #777777;
 }
+
 #project li {
     font-size: 14px;
     color: #777777;
+    padding-bottom: 8px;
+}
+
+#project .margin-5 {
+  margin-left: 5px;
 }
 
 #light {
@@ -349,10 +364,19 @@ a:focus {
   padding-top: 20px;
   padding-bottom: 25px;
 }
+
 #dark {
   background-color: rgb(247, 248, 250);
   padding-top: 20px;
   padding-bottom: 25px;
+}
+
+#project .project-box {
+  border-radius: .3rem;
+  background-color: #fff;
+  padding: 2rem;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 }
 
 /*MacBook*/
@@ -668,13 +692,13 @@ footer p {
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: rgba(175, 218, 255, 0.5);
 }
 
 ::selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: rgba(175, 218, 255, 0.5);
 }
 
 img::selection {

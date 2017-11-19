@@ -29,6 +29,10 @@ body {
     padding: 0;
     margin-bottom: 30px;
     border: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 }
 
 .tz-gallery img {
@@ -50,6 +54,11 @@ body {
     font-size: 12px;
     color: #7b7d7d;
     margin: 0;
+}
+
+.tz-gallery .thumbnail:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
 .baguetteBox-button {
