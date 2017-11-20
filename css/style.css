@@ -119,6 +119,12 @@ a:focus {
     color: #fff;
 }
 
+.navbar-custom a:focus,
+.navbar-custom a:active,
+.navbar-custom a:hover {
+    color: rgba(255,255,255,.8);
+}
+
 .navbar-custom .nav li a {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
