@@ -355,20 +355,62 @@ a:focus {
     padding-bottom: 8px;
 }
 
+#project h2 {
+  margin-bottom: 50px;
+  line-height: 0.5;
+  text-align: center;
+  position: relative;
+  content: "";
+  height: 10px;
+  border-bottom: 1px solid #e7e6e6;
+  top: 0;
+  width: 100%;
+}
+#project h3 {
+  margin-bottom: 20px;
+}
+
+#project h2 span {
+  display: inline-block;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+#project #dark h2 span {
+  background: rgb(247, 248, 250);
+}
+#project #light h2 span {
+  background: #fff;
+}
+
+/*h2 span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+h2 span:after {
+  left: 100%;
+  margin-left: 15px;
+}*/
+
+#project .title-hr {
+  border-color: #e0dede;
+  border-bottom-width: 1px;
+  width: 100%;
+}
+
 #project .margin-5 {
   margin-left: 5px;
 }
 
 #light {
   background-color: #fff;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #dark {
   background-color: rgb(247, 248, 250);
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #project .project-box {
@@ -380,6 +422,11 @@ a:focus {
 }
 
 /*MacBook*/
+.macbook{
+  position: absolute;
+  top: 50%;
+  transform: translateY(20%);
+}
 .pca-hold {
   width: 500px;
   margin: 0 62.5px;

@@ -386,8 +386,44 @@ a.fa.fa-angle-down:focus {
     }
 }
 
+
 .content-section {
     padding-top: 100px;
+}
+
+#about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: rgb(247, 248, 250);
+}
+
+#about p {
+  text-align: left;
+  font-size: 13px;
+  color: #949494;
+}
+
+#about .pro-pic {
+  /*padding-top: 30px;*/
+  /*visibility: hidden;
+  position: absolute;*/
+}
+
+/*#about .fadeIt{
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}*/
+
+#about h2 {
+  color: #9494AB;
+  font-weight: 200;
+  letter-spacing: 10px;
+  margin-bottom: 30px;
 }
 
 #resume {
@@ -414,7 +450,7 @@ a.fa.fa-angle-down:focus {
     /* W3C */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000', GradientType=0);
     /* IE6-9 */
-    padding: 80px 0;
+    padding: 140px 0;
     background-attachment: fixed;
 }
 
@@ -450,7 +486,8 @@ a.portfolio-btn {
     display: inline-block;
     padding: 10px 20px;
     color: #000;
-    border: 2px solid #000;
+    background-color: #f3f3f3;
+    /*border: 2px solid #000;*/
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -463,9 +500,11 @@ a.portfolio-btn {
 a.portfolio-btn:hover, a.portfolio-btn:active {
     /*background-position: -100% 100%;*/
     color: #000;
+    background-color: #f3f3f3;
     /*font-weight: 400;*/
-    border: 2px solid #000;
-    background-color: rgba(254, 254, 254, 0.2);
+    /*border: 2px solid #000;*/
+    /*background-color: rgba(254, 254, 254, 0.2);*/
+    text-decoration: none;
     padding: 10px 30px;
 }
 
@@ -697,6 +736,9 @@ a.portfolio-btn:hover, a.portfolio-btn:active {
 }
 
 
+.categories {
+  margin: 30px;
+}
 /* FOR CHANGING COLOR OF ACTIVE CATEGORY */
 .categories a.active {
     /*background-color: #C7E5FF;*/
