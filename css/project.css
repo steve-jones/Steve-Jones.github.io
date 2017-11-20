@@ -372,6 +372,8 @@ a:focus {
 
 #project h2 span {
   display: inline-block;
+  line-height: 1;
+  margin-top: -10px;
   padding-left: 45px;
   padding-right: 45px;
 }
