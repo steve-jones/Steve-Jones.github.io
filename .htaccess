@@ -1,0 +1,3 @@
+RewriteEngine On
+# This allows you to redirect index.html to a specific subfolder
+Redirect /techman https://docs.google.com/presentation/d/1pEN4bPB2X-rkkEWwPT6gA3J39ksuu7GZ3rN9dvYKbiw/edit?usp=sharing
