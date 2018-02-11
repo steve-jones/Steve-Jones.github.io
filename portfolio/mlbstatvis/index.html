@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="steve jones, steve, jones, stevejones.io, georgia tech, georiga institute of technology, atlanta, boston, umass, umass amherst, university of massachusetts, front-end, web, website, computer science, software, developer, engineer, designer, ux" />
+  <meta name="author" content="Steve Jones" />
+  <meta name="description" content="Developer | Designer | Researcher" />
+
+  <title>MLB Statistics Visualization - Steve Jones</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" type="text/css" href="../../css/animate.css">
+
+  <!-- Custom CSS -->
+  <!-- <link href="../css/style.css" rel="stylesheet"> -->
+  <!-- Project CSS -->
+  <link href="../../css/project.css" rel="stylesheet">
+  <!-- BOOTSTRAP STYLE SHEET -->
+  <link href="../../css/bootstrap.css" rel="stylesheet" />
+  <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
+  <link href="../../js/source/jquery.fancybox.css" rel="stylesheet" />
+
+  <!-- Custom Fonts -->
+  <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'>
+
+  <!-- Bootstap Gallery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+  <link rel="stylesheet" href="../_gallery-template_/clean/gallery-clean.css">
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80316791-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+  <style>
+  #intro {
+    background: url(CS7450-HighFidelity-II.png);
+    /*height: 100%;*/
+    background-size: cover;
+    background-position: center;
+    /*background-position-y: 91px;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #000;
+  }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="../../">
+          <span class="light">Steve</span> Jones
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../../index.html#about">About</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../../index.html#resume">Resume</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../../index.html#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../../index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Intro Header -->
+  <section id="intro" class="intro text-center">
+    <div class="overlay">
+      <div class="intro-content">
+        <h1 class="brand-heading animated fadeInDown delay-05s">MLB Statistics Visualization</h1>
+        <p class="intro-text animated fadeIn delay-2s">Design & development of a D3 InfoVis for MLB stats</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projcet -->
+  <section id="project">
+
+
+    <section id="dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="portfolio-title"><span>Overview</span></h2>
+            <div class="col-lg-7">
+              <h3 class="filter-text">Purpose</h3>
+              <div class="project-text">
+                <p>
+                  I chose the topic of visualizing MLB statistics because baseball is one of the most statistics-laden sports because of its relatively additive nature (individual player contribution can be well separated), large sample size (500+ at-bats for a starting player during the season), and a long tradition of applying statistics, concepts and tools. As a result, baseball statistics are not only of interest for the analytic departments of professional teams, but also widely popular among the fans.
+                </p>
+                <p>
+                  The immense available data set consists of over 6000 plate appearances by hitters for each team per season dating back to 1901. This presents an interesting challenge of displaying all of this data in unique and usable ways to help users gain a better understanding of statistics and performance for players and teams, and this challenge excited me.
+                </p>
+              </div>
+              <h3 class="filter-text">Challenges / Constraints</h3>
+              <div class="project-text">
+                <p>
+                  Ideally for this project I would like to do user interviews with both baseball fans, as well as Baseball R&D Analysts and other folks involved in baseball operations teams. However, the latter is a very niche user base and it is difficult to get access to those users. I have contacted one person from an MLB clubs baseball ops team and I'm hoping to interview them soon. Because of the lack of access to these users my research and design decisions will primarily be based on the baseball fan user demographic.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-4">
+              <h3 class="filter-text">Project Info</h3>
+              <div class="project-text">
+                <table class="table">
+                  <tr>
+                    <th scope="row">Type</th>
+                    <td>Masters Research Project</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Advisor</th>
+                    <td><a href="http://va.gatech.edu/endert/" target="_blank">Alex Endert</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Duration</th>
+                    <td>1 Semester (6 Credits)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tools Used</th>
+                    <td>Balsamiq, Sketch, D3.js</td>
+                  </tr>
+                </table>
+              </div>
+              <!-- <h3 class="filter-text">Team</h3>
+              <div class="project-text margin-5">
+              <p>
+              <span style="font-weight: bold;">Steve Jones</span><span style="float: right">M.S. HCI</span>
+              <br>UX Research, UX Design, Front-end Dev, Video
+            </p>
+            <p>
+            <span style="font-weight: bold;">Dr. Alex Endert</span><span style="float: right">Georgia Tech Visual Analytics Lab</span>
+            <br>Finding data, D3 Programming, Front-end Dev
+          </p>
+          <p>
+          <span style="font-weight: bold;">Member 2</span><span style="float: right">M.S. CS</span>
+          <br>D3 Programming, Data analyzing, Database
+        </p>
+      </div> -->
+      <!-- <h3 class="filter-text">Links</h3>
+      <div class="project-text">
+      <p>Web App: <a href="http://mlbstat.com">http://mlbstat.com</a></p>
+      <p>Video: <a href="https://www.youtube.com/watch?v=gCGGDFH4zt8">https://youtu.be/gCGGDFH4zt8</a></p>
+    </div> -->
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>Problem</span></h2>
+        <div class="project-text">
+          <p>
+            Baseball is one of the most statistics-laden sports because of its relatively additive nature (individual player contribution can be well separated), large sample size (500+ at-bats for a starting player during the season), and a long tradition of applying statistics, concepts and tools. As a result, baseball statistics are not only of interest for the analytic departments of professional teams, but also widely popular among fans. The immense available data set consists of over 190,000 plate appearances by hitters per season dating back to 1901. This presents an interesting challenge of displaying all of this data in unique and usable ways to help users gain a better understanding of statistics and performance for players and teams.
+          </p>
+          <p>
+            Many people love baseball because of its inherent statistical characteristics. However, for both team analytic departments and fans, often the practice of statistical inquiries of is still limited to looking at multiple spreadsheets containing thousands of statistical values. This takes efforts to figure out patterns or trends.
+          </p>
+          <p>
+            Sometimes a few of the better baseball analytics internet tools include visualizations (Fangraphs, Hardball Times, 538, etc.). However, the figures are often of simple static visualizations such as scatter plots or bar charts. Existing solutions are rarely interactive, and often presented in views that are independent with each other. This often means they are limited to displaying one specific statistic and a smaller time frame or a higher overview.
+          </p>
+        </div>
+        <br>
+        <h3 class="filter-text">Potential Solution</h3>
+        <div class="project-text">
+          <p>
+            The goal of this project will be to design an online interactive MLB statistics visualization tool to convey a greater scope of information on a single view, while maintaining the information saliency of simple visualizations. This along with user interactions will allow users to both quickly find answers to simple statistical inquiries, as well as discover more complex insights and trends.
+          </p>
+          <p>
+            Focusing the visualization on the temporal dimension will enable visual exploration of the history of MLB, highlighting individual player performance/development, team performance, and the relation between the two. Temporal patterns in these aspects are especially difficult to see with traditional methods, and even though finding historical data of an individual player is relatively easy, it is much harder to integrate the temporal storylines from different players from a team or the whole league.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>Process</span></h2>
+        <div class="col-lg-3">
+          <h3 class="filter-text">Steps</h3>
+          <div class="project-text">
+            <ol>
+              <li>Literature Review</li>
+              <li>Competitive Analysis</li>
+              <li>User Interviews</li>
+              <li>Low-fidelity Design Prototype</li>
+              <li>User Testing</li>
+              <li>High-fidelity Interactive Design Prototype</li>
+              <li>User Testing</li>
+              <li>Develop Final System</li>
+              <li>Final System</li>
+              <li>User Testing</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <h3 class="filter-text">Method</h3>
+          <div class="project-text">
+            <p>
+              My goal is to perform initial user interviews to understand how participants use current solutions and how an interactive visualization could allow them to achieve their goals more effectively and efficiently. I then will go through an interative design process from paper design prototypes to a fully functioning D3 solution, while performing user tests as part of each iteration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>User Research</span></h2>
+        <div class="tz-gallery">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="filter-text">User Interview Findings</h3>
+              <div class="thumbnail">
+                <a class="lightbox" href="images/User-Interview-Findings.png">
+                  <img src="images/User-Interview-Findings.png" >
+                </a>
+                <!-- <div class="caption">
+                  <h3>User Interview Findings</h3>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="filter-text">Design Requirements</h3>
+              <div class="thumbnail">
+                <a class="lightbox" href="images/Design-Requirements.png">
+                  <img src="images/Design-Requirements.png" >
+                </a>
+                <!-- <div class="caption">
+                  <h3>User Interview Findings</h3>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="filter-text"><span>Paper Prototypes</span></h2>
+        <div class="tz-gallery">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <a class="lightbox" href="images/PaperPrototype-2.jpg">
+                  <img src="images/PaperPrototype-2.jpg" alt="Bridge">
+                </a>
+                <div class="caption">
+                  <h3>Paper Prototype</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <h2 class="filter-text"><span>Low-Fidelity Prototype</span></h2>
+        <!-- <h5 class="filter-text">Design Decisions Based on User Feedback</h5>
+        <div class="project-text">
+        <ul>
+        <li>We decided it is important to show an initial timeline view (1901-present) because it gives the user an idea of the complete history and trends of the data presented. However, we assume most users will want to interact with the timeline to view a more specific period or filter to specific teams/positons. This meant it was important for us to include intuitive zoom/pan and filtering interaction.</li>
+        <li>Default to one main statistic displayed on timeline, with subtle dropdown for "power users" to select other statistics</li>
+      </ul>
+    </div> -->
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="thumbnail">
+            <a class="lightbox" href="images/LowFidelity.png">
+              <img src="images/LowFidelity.png" >
+            </a>
+            <div class="caption">
+              <h3>Low-Fidelity</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="thumbnail">
+            <a class="lightbox" href="images/LowFidelity-Annotated.png">
+              <img src="images/LowFidelity-Annotated.png" alt="Bridge">
+            </a>
+            <div class="caption">
+              <h3>Low-Fidelity Annotated</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-lg-12">
+    <h2 class="filter-text"><span>High-Fidelity I</span></h2>
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="thumbnail">
+            <a class="lightbox" href="images/HighFidelity-I.png">
+              <img src="images/HighFidelity-I.png" >
+            </a>
+            <div class="caption">
+              <h3>High-Fidelity I</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-lg-12">
+    <h2 class="filter-text"><span>Poster</span></h2>
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="thumbnail">
+            <a class="lightbox" href="images/poster.png">
+              <img src="images/poster.png" >
+            </a>
+            <div class="caption">
+              <h3>Poster</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-lg-12">
+    <h2 class="filter-text"><span>High-Fidelity Prototype II</span></h2>
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-md-4">
+        <div class="project-box project-text">
+        <h5 class="portfolio-title">Notable Feedback & Changes</h5>
+        <p>The purpose of the course project was to develop an InfoVis using D3, this meant there was little opportunity in our timeline for me to employ user research methods in order to better understand the problem and the users. I did however take advantage of the early stages of the project to go through a mini “design sprint” and multiple stages of design prototypes.</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a class="lightbox" href="images/HighFidelity-II_Annotated-2.png">
+          <img src="images/HighFidelity-II_Annotated-2.png" >
+        </a>
+        <div class="caption">
+          <h3>High-Fidelity II - Annotated</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <a class="lightbox" href="images/HighFidelity-II_Annotated-3.png">
+          <img src="images/HighFidelity-II_Annotated-3.png" >
+        </a>
+        <div class="caption">
+          <h3>High-Fidelity II - Timeline Zoomed</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+</div>
+</div>
+</div>
+
+</section>
+
+<section id="light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>To be continued</span></h2>
+        <div class="project-text">
+          <p style="text-align: center">
+            I'm currently still working on this project and will update this page periodically.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>Solution</span></h2>
+        <div class="col-lg-12">
+          <h3 class="portfolio-title">Impact on Problem</h3>
+          <div class="project-text">
+            <p>
+              Unfortunately, because I did all of the design work, I decided to let my teammates take care of the development. In typical semester-long project fashion, development of the final app didn’t start until the last couple weeks of the semester. Fortunately, my teammates were great developers and turned around a functional web app in short time.
+            </p>
+            <p>
+              Unfortunately, I experienced the classic designer disappointment of handing off designs from a semester of hard work and having them all but ignored. The web app that they designed and developed works decently, and includes some of my design and research. However, the user experience is painfully disappointing to me.
+            </p>
+            <p>
+              I often like to say, “If you need an onboarding tutorial to explain a user how to use your app, it means your UX sucks.” The inclusion of an onboarding screen in our app is a great example of this.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="tz-gallery">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a class="lightbox" href="http://mlbstat.com" target="_blank">
+                  <img src="images/mlbstatvis-app.png" >
+                </a>
+                <div class="caption">
+                  <h3>Final Web App</h3>
+                  <a href="http://mlbstat.com" target="_blank" class="btn btn-primary" role="button">http://mlbstat.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/gCGGDFH4zt8?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              <div class="caption">
+                <h3>Video Demo</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="portfolio-title"><span>Reflection</span></h2>
+        <div class="col-lg-6">
+          <h3 class="portfolio-title">What I Learned</h3>
+          <p>
+            Although the final solution was incredibly disappointing to me, I took away some important lessons. I learned the importance of good communication between designers and developers. Despite me communicating my research and design decisions, the developers ignored them. I’m not sure what the issue was, but maybe I didn’t communicate the justifications for the design decisions effectively enough to motivate the developers to incorporate them.
+          </p>
+          <p>
+            However, I also learned that as the designer, I could have benefitted from more communication with my team. Although what the developers designed and built wasn’t what we designed, they made some design decisions that I thought were great and I would have loved to incorporate them in the design process.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="portfolio-title">What I Would Have Done Differently</h3>
+          <div class="project-text">
+            <ul>
+              <li>
+                Although it was a restriction based on the fact that this was not a design project, I would have done much more initial user research to better understand the problem and design a solution.
+              </li>
+              <li>
+                I would have done more user testing between design iterations.
+              </li>
+              <li>
+                I would have loved to do one more design iteration/ Based on user feedback we decided to incorporate the WAR/Salary timeline in a bigger way. I sketched and explained to the developers how we could do this. However, I didn’t have a chance to do a new high-fidelity iteration of this design.
+              </li>
+              <li>
+                I would have liked to quantify the impact of our solution by timing users to discover an insight using both existing solutions and our solution. e.g. “Which Red Sox player had the highest value (WAR to salary ratio) in the last 5 years”
+              </li>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-6">
+          <h3 class="portfolio-title">Next Steps</h3>
+          <div class="project-text">
+            <p>
+              I'd really like to take a step back and do another design iteration. Then develop a web app based on that and do some user testing to quantitively compare my solution to existing solutions. As a busy college student it'll be tough to find time to work do this on the side, but I think it will be fun and give me some closure on this project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+</section>
+
+<!-- Footer -->
+<section id="contact">
+  <footer>
+    <div class="copyright">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact</h2>
+            <p>Shoot me an email or check out my online profiles</p>
+            <p><a href="mailto:steve@stevejones.io">steve@stevejones.io</a></p>
+          </div>
+          <div class="col-md-12 text-center">
+            <!-- <h3>Other places you can find me</h3> -->
+            <ul class="list-inline banner-social-buttons animated fadeIn">
+              <!-- LinkedIn Button -->
+              <li><a id="linkedin" href="https://www.linkedin.com/in/stevejones0" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              <!-- Twitter Button -->
+              <li><a id="twitter" href="https://twitter.com/_Steve_Jones" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <!-- GitHub Button -->
+              <li><a id="github" href="https://github.com/Steve-Jones" target="_blank"><i class="fa fa-github"></i></a></li>
+              <!-- Codepen Button -->
+              <li><a id="codepen" href="http://codepen.io/Steve-Jones/" target="_blank"><i class="fa fa-codepen"></i></a></li>
+              <!-- Facebook Button -->
+              <li><a id="facebook" href="https://www.facebook.com/seascapetech" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <!-- Instagram Button -->
+              <li><a id="instagram" href="https://instagram.com/steve_jones_/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright-text">
+          <p>This website designed and developed by Steve Jones: <a href="https://github.com/Steve-Jones/Steve-Jones.github.io/" target="_blank">View it on Github</a></p>
+          <p>&copy; Steve Jones
+            <script type="text/javascript">
+            document.write(new Date().getFullYear());
+            </script>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- jQuery -->
+<script src="../../js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../../js/jquery.easing.min.js"></script>
+
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../../js/theme.js"></script>
+
+<!-- REQUIRED SCRIPTS FILES -->
+<!-- CORE JQUERY SCRIPTS -->
+<!-- <script src="js/jquery-1.11.1.js"></script> -->
+<!--  FANCYBOX PLUGIN -->
+<script src="../../js/source/jquery.fancybox.js"></script>
+<!-- ISOTOPE SCRIPTS -->
+<script src="../../js/jquery.isotope.js"></script>
+<!-- CUSTOM SCRIPTS REQIRED-->
+<script src="../../js/portfolio.js"></script>
+
+<!-- Bootstap Gallery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+baguetteBox.run('.tz-gallery');
+</script>
+
+</body>
+
+</html>
