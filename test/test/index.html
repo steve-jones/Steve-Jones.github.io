@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon"/> -->
+  <!-- <link rel="stylesheet" href="static/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="static/radar-chart.css">
+  <link rel="stylesheet" href="static/site.css">
+  <link rel="stylesheet" href="static/loader.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <!-- <script src="js/materialize.min.js"></script> -->
+  <script src="static/utilities.js"></script>
+  <script src="static/angular.min.js"></script>
+  <script src="static/angularApp.js"></script>
+  <script src="static/d3.v3.min.js"></script>
+  <script src="static/d3-queue.v3.min.js"></script>
+  <script src="static/d3appHead.js"></script>
+  <script src="static/d3app.js"></script>
+  <script src="static/radar-chart.js"></script>
+
+
+  <title> MLB Stat Vis </title>
+</head>
+<body id="body" ng-app="MainApp" ng-controller="MainController">
+
+  <!-- data loading spinner -->
+  <div class="loaderbox" id="loaderbox">
+    <div class="loader"></div>
+    <div class="center" id="loader_text">Loading Data...</div>
+  </div>
+
+
+
+  <div class="container">
+    <!-- player panel -->
+    <div id="top1" class="fixed-top">
+
+      <!-- general header -->
+      <div class="header" id="bannerheader" style="top: 0; width: 100%; height: 60px; background-color: #ffffff; z-index:4; visibility: visible;">
+        <div class="title">
+          <span style="font-size: 20px; font-weight: bold;">MLB Statistics Visualization</span><br>
+        </div>
+      </div>
+
+
+      <div class="main row">
+        <!-- Player View -->
+        <div class="cardView">
+          <div class="card bigCardHeight bigCardWidth">
+            <div id="cardHeader">
+              <div class="card-name">Player View</div>
+
+              <div class="card-dropdown">
+                <!-- <div class="select-style">
+                <select id="teamSelect" ng-model="selectedTeam" ng-change="rePlot(0)">
+                <option ng-repeat="team in teams" ng-value="team"> {{getTeamName(team)}} </option>
+              </select>
+            </div> -->
+
+            <select id="teamSelect" class="dropdown-trigger btn blue-grey darken-4" ng-model="selectedStat" ng-change="rePlot(3)">
+              <option ng-repeat="stat in stats_raw" ng-value="stat"> {{stat}} </option>
+            </select>
+
+          </div>
+          <div class="card-right">
+            <select id="teamSelect" class="dropdown-trigger btn blue-grey darken-4" ng-model="selectedTeam" ng-change="rePlot(0)">
+              <option ng-repeat="team in teams" ng-value="team"> {{getTeamName(team)}} </option>
+            </select>
+
+            <!-- <select id="teamSelect" class="dropdown-trigger btn blue-grey darken-4" ng-model="selectedTeam" ng-change="rePlot(0)">
+            <option ng-repeat="team in teams" ng-value="team"> {{getTeamName(team)}} </option>
+          </select> -->
+
+        </div>
+      </div>
+
+      <div id="playerTimeline"></div>
+      <div id="team-war-timeline-year"></div>
+    </div>
+  </div>
+</div>
+
+<div class="main row">
+  <!-- Team View -->
+  <div class="cardView">
+    <div class="card bigCardHeight bigCardWidth">
+      <div id="cardHeader">
+        <div class="card-name">Team View</div>
+
+        <div class="card-dropdown">
+          <select id="teamSelect" class="dropdown-trigger btn blue-grey darken-4" ng-model="selectedTeam" ng-change="rePlot(0)">
+            <option ng-repeat="team in teams" ng-value="team"> {{getTeamName(team)}} </option>
+          </select>
+        </div>
+
+        <div id="bar-legend">
+          <!-- <div id="sal_legend_text"></div> -->
+          <div id="sal_legend"></div>
+          <div id="sal-legend-text">= 5.0x Leage Average Salary</div>
+          <!-- <div id="war_legend_text"></div> -->
+          <div id="war_legend"></div>
+          <div id="war-legend-text">= 5.0 WAR</div>
+        </div>
+
+      </div>
+
+      <div id="team-salary-timeline"></div>
+      <!-- <div id="team-war-timeline"></div> -->
+      <div id="team-salary-timeline-year"></div>
+      <!-- <div id="team-war-timeline-year"></div> -->
+    </div>
+  </div>
+</div>
+
+<div class="main row">
+  <div class="player-ab-conatiner">
+    <!-- Player A -->
+    <div class="cardView left-card">
+      <div class="card halfCardWidth smallCardHeight">
+        <!-- <div id="info" ng-if="player_hovered.team || teamPerformance.hovered" class="fixed-top"> -->
+        <!-- No Player Hovered/Selected -->
+        <div class="no-player-selected" ng-if="!player_hovered.mlbam && !player1.mlbam">
+          <div class="no-player-selected-text">
+            <div class="no-player-selected-name">Player A</div>
+            <div class="no-player-selected-desc">Select Player Above</div>
+
+          </div>
+        </div>
+
+        <!-- Player1 Hovered -->
+        <div class="player1-box" ng-if="player_hovered.mlbam || player1.mlbam">
+          <!-- Player1 Headshot -->
+          <div class="headshot_div headshot_div_hover">
+            <img id="headshot_hover" ng-if="player_hovered.mlbam && !player1.mlbam" ng-src="http://mlb.mlb.com/mlb/images/players/head_shot/{{player_hovered.mlbam}}.jpg" onerror="this.src='static/noimage.png'">
+            <img id="headshot1" ng-if="player1.mlbam" ng-src="http://mlb.mlb.com/mlb/images/players/head_shot/{{player1.mlbam}}.jpg" onerror="this.src='static/noimage.png'">
+          </div>
+
+          <!-- Player1 Bio Hover -->
+          <div class="player-bio" ng-if="player_hovered.mlbam && !player1.mlbam">
+            <div class="player-name">{{player_hovered.playerName + description(player_hovered)}}</div>
+            <div><b>Team:</b> {{player_hovered.team}}</div>
+            <div><b>Salary:</b> ${{formatSalary(player_hovered.salary)}}</div>
+            <div><b>WAR:</b> {{player_hovered.WAR}}</div>
+          </div>
+          <!-- Player1 Bio Select -->
+          <div class="player-bio" ng-if="player1.mlbam">
+            <div class="player-name">{{player1.playerName + description(player1)}}</div>
+            <div><b>Team:</b> {{player1.team}}</div>
+            <div><b>Salary:</b> ${{formatSalary(player1.salary)}}</div>
+            <div><b>WAR:</b> {{player1.WAR}}</div>
+
+          </div>
+
+          <div class="player-stats" ng-if="player1.pos2=='F' || player_hovered.mlbam=='F'">
+            <!-- stats header -->
+            <div class="stats-head">
+              <div class="stat-list">WAR</div>
+              <div class="stat-list">Salary</div>
+              <div class="stat-list">AVG</div>
+              <div class="stat-list">HR</div>
+              <div class="stat-list">OPS</div>
+            </div>
+
+            <div class="stats-list">
+              <div class="stat-list">{{player1.WAR}}</div>
+              <div class="stat-list">${{formatSalary(player1.salary)}}</div>
+              <div class="stat-list">{{player1.AVG}}</div>
+              <div class="stat-list">{{player1.HR}}</div>
+              <div class="stat-list">{{player1.OPS}}</div>
+            </div>
+          </div>
+
+          <div class="player-stats" ng-if="player1.pos2=='SP' || player1.pos2=='RP'">
+            <!-- stats header -->
+            <div class="stats-head">
+              <div class="stat-list">WAR</div>
+              <div class="stat-list">Salary</div>
+              <div class="stat-list">ERA</div>
+              <div class="stat-list">WHIP</div>
+              <div class="stat-list">FIP</div>
+            </div>
+
+            <div class="stats-list">
+              <div class="stat-list">{{player1.WAR}}</div>
+              <div class="stat-list">${{formatSalary(player1.salary)}}</div>
+              <div class="stat-list">{{player1.ERA}}</div>
+              <div class="stat-list">{{player1.WHIP}}</div>
+              <div class="stat-list">{{player1.FIP}}</div>
+            </div>
+          </div>
+
+          <!-- <div class="info_text_container">
+          <div class="row justify_between">
+          <div id="team_text" ng-if="teamPerformance.hovered">
+          <div>{{teamPerformance.season}} {{getTeamName(player_hovered.team || selectedTeam)}}</div>
+          <div>{{teamPerformance.w}}W-{{teamPerformance.l}}L({{teamPerformance.wpct}})</div>
+          <div>{{teamPerformance.postSeasonText}}</div>
+        </div>
+        <div><img id="team_logo" ng-if="teamPerformance.hovered" ng-src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/{{getESPNID(selectedTeam)}}.png&h=150&w=150"></div>
+      </div>
+    </div> -->
+
+    <div class="player-close">
+      X
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- Player B -->
+<div class="cardView right-card">
+  <div class="card halfCardWidth smallCardHeight">
+    <!-- No Player Hovered/Selected -->
+    <div class="no-player-selected" ng-if="!player_hovered.mlbam && !player2.mlbam || !player1.mlbam">
+      <div class="no-player-selected-text">
+        <div class="no-player-selected-name">Player B</div>
+        <div class="no-player-selected-desc">Select Player Above</div>
+
+      </div>
+    </div>
+
+    <!-- Player2 Hovered -->
+    <div class="player2-box" ng-if="(player_hovered.mlbam && player1.mlbam) || player2.mlbam">
+      <!-- Player2 Headshot -->
+      <div class="headshot_div headshot_div_hover">
+        <img id="headshot_hover" ng-if="player_hovered.mlbam && player1.mlbam && !player2.mlbam" ng-src="http://mlb.mlb.com/mlb/images/players/head_shot/{{player_hovered.mlbam}}.jpg" onerror="this.src='static/noimage.png'">
+        <img id="headshot2" ng-if="player2.mlbam" ng-src="http://mlb.mlb.com/mlb/images/players/head_shot/{{player2.mlbam}}.jpg" onerror="this.src='static/noimage.png'">
+      </div>
+
+      <!-- Player2 Bio Hover -->
+      <div class="player-bio" ng-if="player_hovered.mlbam && !player2.mlbam">
+        <div class="player-name">{{player_hovered.playerName + description(player_hovered)}}</div>
+        <div><b>Team:</b> {{player_hovered.team}}</div>
+        <div><b>Salary:</b> ${{formatSalary(player_hovered.salary)}}</div>
+        <div><b>WAR:</b> {{player_hovered.WAR}}</div>
+      </div>
+      <!-- Player2 Bio Select -->
+      <div class="player-bio" ng-if="player2.mlbam">
+        <div class="player-name">{{player2.playerName + description(player2)}}</div>
+        <div><b>Team:</b> {{player2.team}}</div>
+        <div><b>Salary:</b> ${{formatSalary(player2.salary)}}</div>
+        <div><b>WAR:</b> {{player2.WAR}}</div>
+      </div>
+
+      <div class="player-stats" ng-if="player2.pos2=='F' || player_hovered.mlbam=='F'">
+        <!-- stats header -->
+        <div class="stats-head">
+          <div class="stat-list">WAR</div>
+          <div class="stat-list">Salary</div>
+          <div class="stat-list">AVG</div>
+          <div class="stat-list">HR</div>
+          <div class="stat-list">OPS</div>
+        </div>
+
+        <div class="stats-list">
+          <div class="stat-list">{{player2.WAR}}</div>
+          <div class="stat-list">${{formatSalary(player2.salary)}}</div>
+          <div class="stat-list">{{player2.AVG}}</div>
+          <div class="stat-list">{{player2.HR}}</div>
+          <div class="stat-list">{{player2.OPS}}</div>
+        </div>
+      </div>
+
+      <div class="player-stats" ng-if="player2.pos2=='SP' || player2.pos2=='RP'">
+        <!-- stats header -->
+        <div class="stats-head">
+          <div class="stat-list">WAR</div>
+          <div class="stat-list">Salary</div>
+          <div class="stat-list">ERA</div>
+          <div class="stat-list">WHIP</div>
+          <div class="stat-list">FIP</div>
+        </div>
+
+        <div class="stats-list">
+          <div class="stat-list">{{player2.WAR}}</div>
+          <div class="stat-list">${{formatSalary(player2.salary)}}</div>
+          <div class="stat-list">{{player2.ERA}}</div>
+          <div class="stat-list">{{player2.WHIP}}</div>
+          <div class="stat-list">{{player2.FIP}}</div>
+        </div>
+      </div>
+
+      <!-- <div class="info_text_container">
+      <div class="row justify_between">
+      <div id="team_text" ng-if="teamPerformance.hovered">
+      <div>{{teamPerformance.season}} {{getTeamName(player_hovered.team || selectedTeam)}}</div>
+      <div>{{teamPerformance.w}}W-{{teamPerformance.l}}L({{teamPerformance.wpct}})</div>
+      <div>{{teamPerformance.postSeasonText}}</div>
+    </div>
+    <div><img id="team_logo" ng-if="teamPerformance.hovered" ng-src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/{{getESPNID(selectedTeam)}}.png&h=150&w=150"></div>
+  </div>
+</div> -->
+
+<div class="player-close">
+  X
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<script> window.onload = function() {
+
+  d3app.run();
+  // d3appHead.run() called in d3app.run()
+}
+
+</script>
+
+</body>
+</html>

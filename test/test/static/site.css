@@ -1,0 +1,673 @@
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+mark {
+  padding: 1px 2px;
+}
+
+svg {
+  /* background-color: #ffffff; */
+}
+
+text:hover {
+  cursor: default;
+}
+
+body {
+  font: 12px arial, sans-serif;
+  color: #ffffff;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+}
+.vcenter {
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.fixed-top {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  z-index: 3;
+}
+
+#top1 {
+  top: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+  color: #636460;
+}
+
+.player1-box {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c67400;
+}
+.player2-box {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #0075a8;
+}
+
+.no-player-selected {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.no-player-selected-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: 0 auto; */
+}
+
+.no-player-selected-name {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+}
+.no-player-selected-desc {
+  text-align: center;
+}
+
+.headshot_div {
+  padding: 10px;
+  position: relative;
+  float: left;
+}
+
+.description {
+  font-size: 10px;
+}
+
+#headshot_hover,
+#headshot1,
+#headshot2 {
+  height: 99px;
+  border: 2px solid #aaaaaa;
+}
+
+
+#headshot1 {
+
+}
+
+#headshot2 {
+
+}
+
+.player-bio {
+  width: 40%;
+  float: left;
+  display: inline;
+}
+.player-stats {
+  width: 40%;
+  float: left;
+  display: inline;
+}
+.player-close{
+  float: right;
+  display: inline;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.player-name {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.area.player1 {
+  fill: #c67400;
+  stroke: #c67400;
+  stroke-width: 2px;
+
+}
+.area.player2 {
+  fill: #0075a8;
+  stroke: #0075a8;
+  stroke-width: 2px;
+}
+
+
+.statsbar_stats_header {
+  margin-top: 10px;
+  /* color: #cccccc; */
+  font-weight: bold;
+  /* font-size: 11px; */
+  text-align: right;
+  padding-right: 10px;
+}
+
+.statsbar_stats_header_item {
+  /* height: 20px; */
+  width: 50px;
+  /* align-items: center; */
+  display: inline;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.stats-head {
+  margin-top: 10px;
+  /* color: #cccccc; */
+  font-weight: bold;
+  /* font-size: 11px; */
+  text-align: right;
+
+}
+
+.stats-list {
+  padding-top: 15px;
+}
+
+ .stat-list {
+   width: 20%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+ }
+
+.bartext, .bartext_year {
+  fill: #ffffff;
+  font-weight: bold;
+}
+
+.bg_year {
+
+}
+
+#top_spacing,
+#top_spacing2 {
+  top: 60px;
+  height: 1px;
+  background-color: #161616;
+}
+#top_spacing2 {
+  top: 60px;
+}
+
+#top2 {
+  top: 151px;
+  height: 30px;
+  background-color: #0a0a0a;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+
+.top2col {
+  padding: 0 5px 0 35px;
+}
+
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.headshot_div_hover {
+  flex: 0 0 87.23px;
+}
+
+
+
+#info {
+
+}
+
+.info_text_container {
+  width: 100%;
+  padding: 5px 5px 0 5px;
+}
+
+.bottom_border {
+  width: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 7px;
+}
+
+#team_text {
+}
+
+
+#team_logo {
+  height: 60px;
+  /*border-radius: 25px;*/
+  /*border: 2px solid #aaaaaa;*/
+}
+
+
+.main {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#timeline {
+  overflow-x: auto;
+}
+
+.dot {
+  fill: #666666;
+}
+
+.selected1,
+.hovered1,
+.selected2,
+.hovered2,
+.dot_selected1,
+.dot_hovered1,
+.dot_selected2,
+.dot_hovered2 {
+  stroke-width: 2px;
+}
+.dot_selected1,
+.dot_hovered1,
+.dot_selected2,
+.dot_hovered2 {
+  pointer-events: none;
+}
+
+.selected1,
+.hovered1 {
+  stroke: #c67400;
+}
+
+.selected2,
+.hovered2 {
+  stroke: #0075a8;
+}
+
+.dot_selected1,
+.dot_hovered1 {
+  fill: #c67400;
+  stroke: #c67400;
+}
+
+.dot_selected2,
+.dot_hovered2 {
+  fill: #0075a8;
+  stroke: #0075a8;
+}
+
+.yearText {
+  font-size: 9px;
+  /* font-weight: bold; */
+  fill: #62645f85;
+  /* transform: rotate(-90deg) translate(1px,9px); */
+}
+
+.chartline,
+.chartbaseline {
+  stroke:  #ffffff;
+  stroke-width: 2px;
+  fill: none;
+  opacity: 0.5;
+}
+
+.chartbaseline {
+  stroke-width: 2px;
+  stroke-dasharray: 4,2;
+  opacity: 0.3;
+}
+
+.card {
+  height: 100%;
+}
+
+.bigCardWidth {
+  width: 1280px;
+}
+
+.bigCardHeight {
+  height: 325px;
+}
+
+.halfCardWidth {
+  width: 630px;
+}
+
+.smallCardHeight {
+  height: 120px;
+}
+
+.player-ab-conatiner {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#chartContainerLeft,
+.cardView {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 1280;
+  height: 325px;
+  /*background-color: #0c0c0c;*/
+}
+
+.left-card {
+  /* margin-right: 10px; */
+  position: absolute;
+}
+
+.right-card {
+  left: 650px;
+}
+
+#cardHeader {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card-name {
+  display: inline-block;
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-dropdown {
+  display: inline-block;
+  text-align: center;
+  width: 19%;
+}
+.card-right {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+}
+
+#overlay_left {
+  left: 30px;
+  width: 630px;
+  height: 550px;
+}
+
+#team-salary-timeline {
+  display: block;
+  height: 240px; /*must specify height to avoid wierd things due to pixel rounding */
+  padding-top: 10px;
+  padding-left: 40px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+}
+
+#overlay_right_top,
+#playerTimeline {
+  margin-top: 10px;
+  padding-left: 3px;
+}
+
+#rightspacing {
+  width: 100%;
+  height: 5px;
+}
+
+#overlay_right_bottom,
+#team-war-timeline {
+  position: relative;
+  height: 240px;
+  /* padding-top: 10px; */
+  padding-left: 35px;
+  left: 15px;
+  top: -230px;
+}
+
+#player-timeline-year {
+  height: 30px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+#team-salary-timeline-year{
+  height: 30px;
+  padding-left: 38px;
+}
+#team-war-timeline-year {
+  height: 30px;
+  padding-left: 38px;
+}
+
+#barlegend {
+  width: 25px;
+}
+
+.header {
+  position: relative;
+  color: #636460;
+
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: left;
+  padding-left: 35px;
+}
+
+.overlay_text_center {
+  top: 25%;
+  width: 100%;
+  padding: 0 30%;
+}
+
+.overlay_text_big {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.overlay_border {
+  border: 2px solid #ffffff;
+}
+
+.arrow {
+  color: white;
+  font-size: 24px;
+}
+
+.axis line,
+.axis path {
+  stroke: #0000001a;
+  fill: none;
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  stroke: #ffffff;
+}
+
+.axis text {
+  stroke: none;
+  fill: #aaaaaa;
+  shape-rendering: crispEdges;
+  font-family: sans-serif;
+  font-size: 9px;
+}
+
+
+.select-style {
+  border: 1px solid #ccc;
+  /*width: 120px;*/
+  height: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  /*    background: #ffffff url("static/icons/icon-arrow-down.png") no-repeat right 90% 50%;*/
+}
+
+.select-style select {
+  padding: 1px 1px;
+  width: 100%;
+  min-width: 75px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-color: #000000;
+  background-image: none;
+  /*    -webkit-appearance: none;
+  -moz-appearance: none;*/
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
+#teamSelect {
+  width: 150px;
+}
+
+.linelegend line {
+  stroke: #aaaaaa;
+  fill: none;
+  stroke-width: 1px;
+}
+
+.linelegend text {
+  stroke: none;
+  fill: #aaaaaa;
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+#axisTextMain {
+  stroke: none;
+  fill: #cccccc;
+  font-size: 14px;
+}
+
+.leftmenu {
+  width: 30px;
+  padding: 5px;
+  background-color: #ffffff
+}
+
+.svgicon {
+  fill: #aaaaaa;
+  stroke: none;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.leftmenu_spacing20 {
+  height: 20px;
+}
+
+.leftmenu_icon {
+  padding: 15px 0;
+}
+
+#bar-legend {
+  position: relative;
+  float: right;
+  height: 30px;
+  width: 40%;
+}
+
+#sal_legend {
+  left: 100px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#war_legend {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#sal-legend-text {
+  left: 122px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#war-legend-text {
+  left: 22px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#barlegend svg {
+  /* background-color: #0c0c0c; */
+}
+#barlegend svg text {
+  fill: #aaaaaa;
+  stroke: none;
+}
+
+#sal_legend_text {
+  /* margin-top: 20px; */
+}
+
+#war_legend_text {
+  /* margin-top: 20px; */
+}
+
+#sal_legend_svg_text {
+  /* transform: rotate(-90deg) translate(-345px,16px); */
+}
+
+#war_legend_svg_text {
+  /* transform: rotate(-90deg) translate(-65px,16px); */
+}
+
+select {
+  display: initial !important;
+}
+
+select.browser-default {
+  display: block;
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  height: 2rem !important;
+}
